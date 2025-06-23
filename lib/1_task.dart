@@ -11,6 +11,8 @@ void main() {
   task5_assignment_operators();
   print('');
   task6_conditional_constructs();
+  print('');
+  task7_switch();
 }
 
 void task1_rectangle() {
@@ -107,6 +109,34 @@ void task6_conditional_constructs() {
     print('Оцінка: $examScore, Повторити курс');
   } else {
     print('Оцінка: $examScore, Не здано');
+  }
+
+}
+
+task7_switch(){
+  final random = new Random();
+  int dayNumber = random.nextInt(10);
+  print('dayNumber: $dayNumber');
+
+  switch(dayNumber){
+    case 1:
+      print('Monday');
+    case 2:
+      print('Tuesday');
+    case 3:
+      print('Wednesday');
+    case 4:
+      print('Thursday');
+    case 5:
+      print('Friday');
+    case 6:
+      print('Saturday');
+      print('Weekday 🎉');
+    case 7:
+      print('Sunday');
+      print('Weekday 🎉');
+    default:
+      print('Wrong day number');
   }
 
 }
