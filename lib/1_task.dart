@@ -5,6 +5,8 @@ void main() {
   task2_comparison();
   print('');
   task3_logical_operators();
+  print('');
+  task4_ternary_operator();
 }
 
 void task1_rectangle() {
@@ -61,4 +63,19 @@ void task3_logical_operators(){
   //   print('Unfortunately, you cant buy goods');
   // }
 
+}
+
+
+
+void task4_ternary_operator(){
+  final random = new Random();
+  int temperature = random.nextInt(51) - 15;
+
+  String weather = temperature > 25 ? 'Warm' : 'Cool';
+  print('Temperature: $temperature, The weather is: $weather');
+
+  String extra = temperature < 10 ? 'Very cold' : '';
+  if(extra != '') {
+    print('$extra');
+  }
 }
