@@ -17,6 +17,8 @@ void main() {
   task8_for();
   print('');
   task9_while();
+  print('');
+  task10_break_continue();
 }
 
 void task1_rectangle() {
@@ -176,6 +178,19 @@ void task9_while() {
     }
 
     num--;
+  }
+
+}
+
+void task10_break_continue(){
+
+  for(int i = 1; i <= 20; i++){
+    if(i % 3 == 0){
+      continue;
+    }else if(i > 15){
+      break;
+    }
+    print('i: $i');
   }
 
 }
