@@ -15,6 +15,8 @@ void main() {
   task7_switch();
   print('');
   task8_for();
+  print('');
+  task9_while();
 }
 
 void task1_rectangle() {
@@ -97,30 +99,28 @@ void task5_assignment_operators() {
 }
 
 void task6_conditional_constructs() {
-
   final random = new Random();
   int examScore = random.nextInt(100);
 
-  if(examScore > 90){
+  if (examScore > 90) {
     print('Оцінка: $examScore, Відмінно');
-  }else if(examScore >= 75 && examScore <= 90){
+  } else if (examScore >= 75 && examScore <= 90) {
     print('Оцінка: $examScore, Добре');
-  }else if(examScore >= 60 && examScore < 75){
+  } else if (examScore >= 60 && examScore < 75) {
     print('Оцінка: $examScore, Задовільно');
   } else if (examScore < 20) {
     print('Оцінка: $examScore, Повторити курс');
   } else {
     print('Оцінка: $examScore, Не здано');
   }
-
 }
 
-task7_switch(){
+void task7_switch() {
   final random = new Random();
   int dayNumber = random.nextInt(10);
   print('dayNumber: $dayNumber');
 
-  switch(dayNumber){
+  switch (dayNumber) {
     case 1:
       print('Monday');
     case 2:
@@ -140,19 +140,17 @@ task7_switch(){
     default:
       print('Wrong day number');
   }
-
 }
 
 
-task8_for(){
-
+void task8_for() {
   for (int i = 1; i <= 10; i++) {
     print('Number: $i');
   }
 
-  print('\nDouble');
+  print('\nEven');
   for (int i = 1; i <= 10; i++) {
-    if(i % 2 == 0) {
+    if (i % 2 == 0) {
       print('Number: $i');
     }
   }
@@ -163,5 +161,21 @@ task8_for(){
     sum += i;
   }
   print('Sum: $sum');
+}
+
+void task9_while() {
+  int num = 10;
+
+  while(num > 0){
+    print('\nnum: $num');
+
+    if(num % 2 == 0){
+      print('Its an even number');
+    }else{
+      print('Its an odd number');
+    }
+
+    num--;
+  }
 
 }
