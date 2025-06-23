@@ -3,6 +3,8 @@ import 'dart:math';
 void main() {
   task1_rectangle();
   task2_comparison();
+  print('');
+  task3_logical_operators();
 }
 
 void task1_rectangle() {
@@ -29,7 +31,34 @@ void task2_comparison(){
     print('$number  is less than 100');
   }
   if(number % 5 == 0){
-    print('$number is divisible by 5\n');
+    print('$number is divisible by 5');
   }
+
+}
+
+
+void task3_logical_operators(){
+
+  final random = new Random();
+
+  bool hasMoney = random.nextBool();
+  bool isStoreOpen = random.nextBool();
+
+  print('Has money: $hasMoney');
+  print('Is store open: $isStoreOpen');
+
+
+  if (hasMoney && isStoreOpen) {
+    print('You can buy goods');
+  } else if (!hasMoney || !isStoreOpen) {
+    print('Unfortunately, you cant buy goods: You dont have money or the store is closed');
+  }
+
+  //Correct would be write: (just if else)
+  // if(hasMoney && isStoreOpen){
+  //   print('You can buy goods');
+  // }else{
+  //   print('Unfortunately, you cant buy goods');
+  // }
 
 }
