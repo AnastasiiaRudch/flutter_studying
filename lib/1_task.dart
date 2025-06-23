@@ -13,6 +13,8 @@ void main() {
   task6_conditional_constructs();
   print('');
   task7_switch();
+  print('');
+  task8_for();
 }
 
 void task1_rectangle() {
@@ -138,5 +140,28 @@ task7_switch(){
     default:
       print('Wrong day number');
   }
+
+}
+
+
+task8_for(){
+
+  for (int i = 1; i <= 10; i++) {
+    print('Number: $i');
+  }
+
+  print('\nDouble');
+  for (int i = 1; i <= 10; i++) {
+    if(i % 2 == 0) {
+      print('Number: $i');
+    }
+  }
+
+  print('\nSum');
+  int sum = 0;
+  for (int i = 1; i <= 10; i++) {
+    sum += i;
+  }
+  print('Sum: $sum');
 
 }
