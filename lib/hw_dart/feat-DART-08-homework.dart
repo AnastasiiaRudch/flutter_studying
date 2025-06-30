@@ -1,6 +1,6 @@
 import 'dart:math';
 import '../hw_dart/names.dart';
-
+import 'package:word_generator/word_generator.dart';
 
 void main() {
   runTask1List();
@@ -89,5 +89,34 @@ void runTask2Set(){
 }
 
 void runTask3Map(){
+//Створіть список nounsList із 50 випадкових слів (як це зробити, дивіться в документації: https://pub.dev/packages/word_generator#randomnouns).
+
+  final wordGenerator = WordGenerator();
+  List<String> nounsList = wordGenerator.randomNouns(50);
+  print(nounsList);
+
+// Із nounsList створіть Map<String, int> nounsMap, де:
+// ключ — слово;
+// значення — кількість символів у цьому слові.
+
+  Map<String, int> nounsMap = {};
+  for (var word in nounsList) {
+    nounsMap[word] = word.length;
+  }
+  print(nounsMap);
+
+// Створіть нову змінну Map<String, int> tempNouns.
+// Додайте у tempNouns лише ті пари зі nounsMap, де довжина слова — парне число.
+// Виведіть всі ключі зі tempNouns.
+
+  print('***');
+  Map<String, int> tempNouns = {};
+  for(var entry in nounsMap.entries){
+    if(entry.value %2 == 0){
+      tempNouns[entry.key] = entry.value;
+    }
+  }
+
+  print('tempNouns: $tempNouns');
 
 }
