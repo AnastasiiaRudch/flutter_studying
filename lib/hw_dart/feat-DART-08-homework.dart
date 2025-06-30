@@ -118,5 +118,6 @@ void runTask3Map(){
   }
 
   print('tempNouns: $tempNouns');
+  print('Keys from tempNouns: ${tempNouns.keys.join(', ')}');
 
 }
