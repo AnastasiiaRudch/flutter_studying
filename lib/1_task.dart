@@ -1,27 +1,27 @@
 import 'dart:math';
 
 void main() {
-  task1_rectangle();
-  task2_comparison();
+  task1Rectangle();
+  task2Comparison();
   print('');
-  task3_logical_operators();
+  task3LogicalOperators();
   print('');
-  task4_ternary_operator();
+  task4TernaryOperator();
   print('');
-  task5_assignment_operators();
+  task5AssignmentOperators();
   print('');
-  task6_conditional_constructs();
+  task6ConditionalConstructs();
   print('');
-  task7_switch();
+  task7Switch();
   print('');
-  task8_for();
+  task8For();
   print('');
-  task9_while();
+  task9While();
   print('');
-  task10_break_continue();
+  task10BreakContinue();
 }
 
-void task1_rectangle() {
+void task1Rectangle() {
   double width = 18.4;
   double length = 30.9;
 
@@ -34,7 +34,7 @@ void task1_rectangle() {
   print('fullSquares: $fullSquares\n');
 }
 
-void task2_comparison() {
+void task2Comparison() {
   final random = new Random();
   int number = random.nextInt(200);
 
@@ -49,7 +49,7 @@ void task2_comparison() {
   }
 }
 
-void task3_logical_operators() {
+void task3LogicalOperators() {
   final random = new Random();
 
   bool hasMoney = random.nextBool();
@@ -73,7 +73,7 @@ void task3_logical_operators() {
   // }
 }
 
-void task4_ternary_operator() {
+void task4TernaryOperator() {
   final random = new Random();
   int temperature = random.nextInt(51) - 15;
 
@@ -86,7 +86,7 @@ void task4_ternary_operator() {
   }
 }
 
-void task5_assignment_operators() {
+void task5AssignmentOperators() {
   int score = 0;
   int correctAnswers = 17;
   int mistakes = 3;
@@ -100,7 +100,7 @@ void task5_assignment_operators() {
   print('Final score: $finalScore');
 }
 
-void task6_conditional_constructs() {
+void task6ConditionalConstructs() {
   final random = new Random();
   int examScore = random.nextInt(100);
 
@@ -117,7 +117,7 @@ void task6_conditional_constructs() {
   }
 }
 
-void task7_switch() {
+void task7Switch() {
   final random = new Random();
   int dayNumber = random.nextInt(10);
   print('dayNumber: $dayNumber');
@@ -145,7 +145,7 @@ void task7_switch() {
 }
 
 
-void task8_for() {
+void task8For() {
   for (int i = 1; i <= 10; i++) {
     print('Number: $i');
   }
@@ -165,7 +165,7 @@ void task8_for() {
   print('Sum: $sum');
 }
 
-void task9_while() {
+void task9While() {
   int num = 10;
 
   while(num > 0){
@@ -182,7 +182,7 @@ void task9_while() {
 
 }
 
-void task10_break_continue(){
+void task10BreakContinue(){
 
   for(int i = 1; i <= 20; i++){
     if(i % 3 == 0){
