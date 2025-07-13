@@ -15,7 +15,7 @@ void runTask1List(){
   print(numbers);
 
   //Виведіть на екран 65-й елемент списку у форматі: "65-й елемент: [значення]".
-  int index = 65;
+  final int index = 65;
   int value = numbers[65];
   print('$index-й елемент: [$value]');
 
@@ -26,7 +26,7 @@ void runTask1List(){
 
   print('***');
   //Видаліть зі списку елементи зі значеннями: 24, 45, 66, 88.
-  numbers.removeWhere((el) => el == 24 || el == 45 || el == 66 || el == 88);
+  numbers.removeWhere({24, 45, 66, 88}.contains);
   print(numbers.length);
 
   print('***');
@@ -65,24 +65,24 @@ void runTask2Set(){
 // Створіть Set uniqueNames1 і додайте до нього всі імена з ukrainianNames1.
 // Створіть Set uniqueNames2 і додайте до нього всі імена з ukrainianNames2.
 
-  Set<String> uniqueNames1 = Set.from(ukrainianNames1);
-  Set<String> uniqueNames2 = Set.from(ukrainianNames2);
+  final Set<String> uniqueNames1 = Set.from(ukrainianNames1);
+  final Set<String> uniqueNames2 = Set.from(ukrainianNames2);
   print('uniqueNames1: $uniqueNames1');
   print('uniqueNames2: $uniqueNames2\n');
 
 // Створіть новий Set зі спільними іменами обох списків. Виведіть кількість елементів у цій множині.
 
-  Set<String> commonNames = uniqueNames1.intersection(uniqueNames2);
+  final Set<String> commonNames = uniqueNames1.intersection(uniqueNames2);
   print('commonNames: $commonNames');
   print(commonNames.length);
 
 // Створіть множину з іменами, що є в uniqueNames1, але яких немає в uniqueNames2. Виведіть ці імена.
-  Set<String> difference = uniqueNames1.difference(uniqueNames2);
+  final Set<String> difference = uniqueNames1.difference(uniqueNames2);
   print('difference uniqueNames1 - uniqueNames2: $difference');
   print('In uniqueNames1 only: ${difference.length}');
 
 // Створіть множину з іменами, що є в uniqueNames2, але яких немає в uniqueNames1. Виведіть ці імена.
-  Set<String> difference2 = uniqueNames2.difference(uniqueNames1);
+  final Set<String> difference2 = uniqueNames2.difference(uniqueNames1);
   print('difference uniqueNames2 - uniqueNames1: $difference2');
   print('In uniqueNames2 only: ${difference2.length}');
 
