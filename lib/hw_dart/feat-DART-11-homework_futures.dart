@@ -75,8 +75,8 @@ Future<void> task4() async {
   final stopwatch = Stopwatch()..start();
 
   final results = await Future.wait([task1FetchName(), task2FetchAge(21)]);
-  final String name = results[0] as String;
-  final int age = results[1] as int;
+  final name = results[0] as String;
+  final age = results[1] as int;
 
   print('$name, $age');
 
