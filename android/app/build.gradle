@@ -49,6 +49,10 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        manifestPlaceholders = [
+                appAuthRedirectScheme: 'com.example.behealthyproject',
+                applicationName: "io.flutter.app.FlutterApplication"
+        ]
     }
 
     buildTypes {
