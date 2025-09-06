@@ -51,7 +51,6 @@ List<String> ukrainianNames1 = [
   'Юлія',
 ];
 
-
 List<String> ukrainianNames2 = [
   'Андрій',
   'Богдан',

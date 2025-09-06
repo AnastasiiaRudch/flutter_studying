@@ -19,9 +19,7 @@ class AuthService {
       ),
     );
 
-    if (result != null) {
-      await _persistToken(result);
-    }
+    await _persistToken(result);
   }
 
   Future<void> _persistToken(TokenResponse result) async {
@@ -58,9 +56,7 @@ class AuthService {
       ),
     );
 
-    if (response != null) {
-      await _persistToken(response);
-    }
+    await _persistToken(response);
   }
 
   Future<void> logout() async {

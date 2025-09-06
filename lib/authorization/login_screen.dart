@@ -22,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final isLoggedIn = await authService.isLoggedIn();
     if (isLoggedIn) {
       // Перейти в основной экран
+      if (!mounted) return;
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (_) => const HomeScreen()));
     }

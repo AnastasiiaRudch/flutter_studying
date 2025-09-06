@@ -8,7 +8,7 @@ void main() async {
 
 //Частина 2: Streams
 
-Future<void> task6() async{
+Future<void> task6() async {
   //Task 6: Стрім з чисел (fromIterable)
   //
   // Створіть Stream<int> з довільних чисел (наприклад, від 1 до 5) за допомогою Stream.fromIterable.
@@ -16,14 +16,13 @@ Future<void> task6() async{
   // Виведіть кожне значення з цього ж стріму, використовуючи метод listen.
 
   final Stream<int> stream = Stream.fromIterable([1, 2, 3, 4, 5]);
-  await for(final value in stream){
+  await for (final value in stream) {
     print('await: $value');
   }
 
   stream.listen((value) {
     print('listen: $value');
   });
-
 }
 
 void task7() {
@@ -33,15 +32,16 @@ void task7() {
 // Обмежте відлік до 10 чисел за допомогою методу take.
 // Виведіть кожне число у консоль у форматі: "1...", "2...", "3...", ... "10...".
 
-  final Stream<int> stream = Stream.periodic(const Duration(seconds: 1), (count)=> count+1).take(10);
+  final Stream<int> stream =
+      Stream.periodic(const Duration(seconds: 1), (count) => count + 1)
+          .take(10);
 
   stream.listen((value) {
     print('$value...');
   });
-  
 }
 
-Future<void> task8() async{
+Future<void> task8() async {
 //Task 8: Робота з StreamController
 //
 // Створіть StreamController<String>.
@@ -53,8 +53,8 @@ Future<void> task8() async{
   final controller = StreamController<String>();
 
   controller.stream.listen(
-        (data) {
-      print('$data');
+    (data) {
+      print(data);
     },
     onDone: () {
       print('Стрім завершено');

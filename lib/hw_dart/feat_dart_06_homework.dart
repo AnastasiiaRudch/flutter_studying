@@ -35,7 +35,7 @@ void task1Rectangle() {
 }
 
 void task2Comparison() {
-  final random = new Random();
+  final random = Random();
   int number = random.nextInt(200);
 
   if (number > 50) {
@@ -50,7 +50,7 @@ void task2Comparison() {
 }
 
 void task3LogicalOperators() {
-  final random = new Random();
+  final random = Random();
 
   bool hasMoney = random.nextBool();
   bool isStoreOpen = random.nextBool();
@@ -74,7 +74,7 @@ void task3LogicalOperators() {
 }
 
 void task4TernaryOperator() {
-  final random = new Random();
+  final random = Random();
   int temperature = random.nextInt(51) - 15;
 
   String weather = temperature > 25 ? 'Warm' : 'Cool';
@@ -82,7 +82,7 @@ void task4TernaryOperator() {
 
   String extra = temperature < 10 ? 'Very cold' : '';
   if (extra != '') {
-    print('$extra');
+    print(extra);
   }
 }
 
@@ -101,7 +101,7 @@ void task5AssignmentOperators() {
 }
 
 void task6ConditionalConstructs() {
-  final random = new Random();
+  final random = Random();
   int examScore = random.nextInt(100);
 
   if (examScore > 90) {
@@ -118,7 +118,7 @@ void task6ConditionalConstructs() {
 }
 
 void task7Switch() {
-  final random = new Random();
+  final random = Random();
   int dayNumber = random.nextInt(10);
   print('dayNumber: $dayNumber');
 
@@ -144,7 +144,6 @@ void task7Switch() {
   }
 }
 
-
 void task8For() {
   for (int i = 1; i <= 10; i++) {
     print('Number: $i');
@@ -168,29 +167,26 @@ void task8For() {
 void task9While() {
   int num = 10;
 
-  while(num > 0){
+  while (num > 0) {
     print('\nnum: $num');
 
-    if(num % 2 == 0){
+    if (num % 2 == 0) {
       print('Its an even number');
-    }else{
+    } else {
       print('Its an odd number');
     }
 
     num--;
   }
-
 }
 
-void task10BreakContinue(){
-
-  for(int i = 1; i <= 20; i++){
-    if(i % 3 == 0){
+void task10BreakContinue() {
+  for (int i = 1; i <= 20; i++) {
+    if (i % 3 == 0) {
       continue;
-    }else if(i > 15){
+    } else if (i > 15) {
       break;
     }
     print('i: $i');
   }
-
 }

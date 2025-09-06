@@ -1,4 +1,4 @@
-void main() async{
+void main() async {
   final name = await task1FetchName();
   print('Мене звати $name\n');
 
@@ -58,12 +58,13 @@ Future<void> task3() async {
   final stopwatch = Stopwatch()..start();
 
   final name = await task1FetchName();
-  print('$name');
+  print(name);
   final age = await task2FetchAge(25);
   print('$age');
 
   stopwatch.stop();
-  print('Час виконання: ${stopwatch.elapsedMilliseconds} мс\n'); //Час виконання: 3515 мс
+  print(
+      'Час виконання: ${stopwatch.elapsedMilliseconds} мс\n'); //Час виконання: 3515 мс
 }
 
 Future<void> task4() async {
@@ -81,11 +82,11 @@ Future<void> task4() async {
   print('$name, $age');
 
   stopwatch.stop();
-  print('Час виконання: ${stopwatch.elapsedMilliseconds} мс'); //Час виконання: 2004 мс
-
+  print(
+      'Час виконання: ${stopwatch.elapsedMilliseconds} мс'); //Час виконання: 2004 мс
 }
 
-Future<String> task5delayedCountdown(int seconds) async{
+Future<String> task5delayedCountdown(int seconds) async {
 //Task 5: Зворотний відлік з затримкою
 //
 // Напишіть функцію Future<String> delayedCountdown(int seconds), яка приймає кількість секунд.
@@ -99,4 +100,3 @@ Future<String> task5delayedCountdown(int seconds) async{
 
   return 'Start!';
 }
-

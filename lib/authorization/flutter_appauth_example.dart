@@ -238,10 +238,10 @@ class _MyAppState extends State<MyApp> {
   Future<void> _refresh() async {
     try {
       _setBusyState();
-      final TokenResponse? result = await _appAuth.token(TokenRequest(
+      final TokenResponse result = await _appAuth.token(TokenRequest(
           _clientId, _redirectUrl,
           refreshToken: _refreshToken, issuer: _issuer, scopes: _scopes));
-      _processTokenResponse(result!);
+      _processTokenResponse(result);
       await _testApi(result);
     } catch (e) {
       _handleError(e);
@@ -253,14 +253,14 @@ class _MyAppState extends State<MyApp> {
   Future<void> _exchangeCode() async {
     try {
       _setBusyState();
-      final TokenResponse? result = await _appAuth.token(TokenRequest(
+      final TokenResponse result = await _appAuth.token(TokenRequest(
           _clientId, _redirectUrl,
           authorizationCode: _authorizationCode,
           discoveryUrl: _discoveryUrl,
           codeVerifier: _codeVerifier,
           nonce: _nonce,
           scopes: _scopes));
-      _processTokenResponse(result!);
+      _processTokenResponse(result);
       await _testApi(result);
     } catch (e) {
       _handleError(e);
@@ -283,7 +283,7 @@ class _MyAppState extends State<MyApp> {
         Code challenge is not used according to the spec
         https://www.rfc-editor.org/rfc/rfc7636 page 9 section 4.5.
       */
-      final AuthorizationResponse? result = await _appAuth.authorize(
+      final AuthorizationResponse result = await _appAuth.authorize(
         AuthorizationRequest(_clientId, _redirectUrl,
             discoveryUrl: _discoveryUrl, scopes: _scopes, loginHint: 'bob'),
       );
@@ -300,7 +300,7 @@ class _MyAppState extends State<MyApp> {
         );
       */
 
-      _processAuthResponse(result!);
+      _processAuthResponse(result);
     } catch (e) {
       _handleError(e);
     } finally {
@@ -315,7 +315,7 @@ class _MyAppState extends State<MyApp> {
       final String nonce =
           base64Url.encode(List<int>.generate(16, (_) => random.nextInt(256)));
       // use the discovery endpoint to find the configuration
-      final AuthorizationResponse? result = await _appAuth.authorize(
+      final AuthorizationResponse result = await _appAuth.authorize(
         AuthorizationRequest(_clientId, _redirectUrl,
             discoveryUrl: _discoveryUrl,
             scopes: _scopes,
@@ -323,7 +323,7 @@ class _MyAppState extends State<MyApp> {
             nonce: nonce),
       );
 
-      _processAuthResponse(result!);
+      _processAuthResponse(result);
     } catch (e) {
       _handleError(e);
     } finally {
@@ -341,7 +341,7 @@ class _MyAppState extends State<MyApp> {
         This shows that we can also explicitly specify the endpoints rather than
         getting from the details from the discovery document.
       */
-      final AuthorizationTokenResponse? result =
+      final AuthorizationTokenResponse result =
           await _appAuth.authorizeAndExchangeCode(
         AuthorizationTokenRequest(_clientId, _redirectUrl,
             serviceConfiguration: _serviceConfiguration,
@@ -366,7 +366,7 @@ class _MyAppState extends State<MyApp> {
         ```
       */
 
-      _processAuthTokenResponse(result!);
+      _processAuthTokenResponse(result);
       await _testApi(result);
     } catch (e) {
       _handleError(e);

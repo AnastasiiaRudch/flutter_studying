@@ -1,6 +1,8 @@
 import 'dart:math';
-import '../hw_dart/names.dart';
+
 import 'package:word_generator/word_generator.dart';
+
+import '../hw_dart/names.dart';
 
 void main() {
   runTask1List();
@@ -8,14 +10,14 @@ void main() {
   runTask3Map();
 }
 
-void runTask1List(){
+void runTask1List() {
   //Створіть список numbers зі 100 елементів. Кожен елемент — випадкове число від 0 до 100 (використайте Random().nextInt(101)).
   final random = Random();
   List<int> numbers = List.generate(100, (_) => random.nextInt(101));
   print(numbers);
 
   //Виведіть на екран 65-й елемент списку у форматі: "65-й елемент: [значення]".
-  final int index = 65;
+  const int index = 65;
   int value = numbers[65];
   print('$index-й елемент: [$value]');
 
@@ -35,8 +37,8 @@ void runTask1List(){
   // Виведіть результат.
 
   int sum = 0;
-  for(var el in numbers){
-    if(el %3 == 0){
+  for (var el in numbers) {
+    if (el % 3 == 0) {
       print('el %3 : $el');
       sum += el;
     }
@@ -50,18 +52,17 @@ void runTask1List(){
   // Виведіть довжину списку temp.
 
   List<int> temp = [];
-  for(var el in numbers){
-    if(el %2 == 0){
+  for (var el in numbers) {
+    if (el % 2 == 0) {
       print('el %2 : $el');
       temp.add(el);
     }
   }
   print(temp);
   print(temp.length);
-
 }
 
-void runTask2Set(){
+void runTask2Set() {
 // Створіть Set uniqueNames1 і додайте до нього всі імена з ukrainianNames1.
 // Створіть Set uniqueNames2 і додайте до нього всі імена з ukrainianNames2.
 
@@ -85,10 +86,9 @@ void runTask2Set(){
   final Set<String> difference2 = uniqueNames2.difference(uniqueNames1);
   print('difference uniqueNames2 - uniqueNames1: $difference2');
   print('In uniqueNames2 only: ${difference2.length}');
-
 }
 
-void runTask3Map(){
+void runTask3Map() {
 //Створіть список nounsList із 50 випадкових слів (як це зробити, дивіться в документації: https://pub.dev/packages/word_generator#randomnouns).
 
   final wordGenerator = WordGenerator();
@@ -111,13 +111,12 @@ void runTask3Map(){
 
   print('***');
   Map<String, int> tempNouns = {};
-  for(var entry in nounsMap.entries){
-    if(entry.value %2 == 0){
+  for (var entry in nounsMap.entries) {
+    if (entry.value % 2 == 0) {
       tempNouns[entry.key] = entry.value;
     }
   }
 
   print('tempNouns: $tempNouns');
   print('Keys from tempNouns: ${tempNouns.keys.join(', ')}');
-
 }
